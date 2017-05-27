@@ -1,0 +1,14 @@
+{
+  "presets": ["es2015"],
+  "plugins": [
+    "transform-runtime",
+    ["module-resolver", {
+      "root": ["./src", "./src/lib", "./cloned-modules", "./"],
+      "alias": {
+        "assets": "./src/assets/",
+        "common": "./src/lib/common/",
+        "testing": "./testing/"
+      }
+    }]
+  ]
+}

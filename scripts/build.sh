@@ -1,22 +1,13 @@
 #!/bin/sh
-export NODE_ENV="build";
-export PARTNER="";
-for var in $@
-do
-  case $var in
-    "prod")
-      NODE_ENV="production";;
-    "production")
-      NODE_ENV="production";;
-    "stage")
-      NODE_ENV="production";;
-    "staging")
-      NODE_ENV="production";;
-    *)
-      PARTNER=$var
-  esac
-done
-
-echo "NODE_ENV $NODE_ENV"
-echo "PARTNER $PARTNER"
-node_modules/webpack/bin/webpack.js
+if [[ -f "/tmp/ampushconfig" ]]; then
+  export FFPATH=$(cat "/tmp/ampushconfig")
+fi
+export NODE_ENV="development";
+if [[ "$1" ]]; then
+  export NODE_ENV="$1";
+fi
+if [[ "$NODE_ENV" == "development" ]]; then
+  node_modules/webpack/bin/webpack.js --profile;
+else
+  node_modules/webpack/bin/webpack.js;
+fi

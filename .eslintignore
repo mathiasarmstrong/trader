@@ -1,0 +1,12 @@
+**/bower_components/*
+**/node_modules/*
+**/cloned-modules/*
+reports/*
+.tmp/*
+tmp/*
+dist/*
+.github/*
+scripts/*
+e2e/*
+ngConstants.module.js
+sandbox

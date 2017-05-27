@@ -1,0 +1,34 @@
+{
+  "ecmaVersion": 6,
+  "libs": [
+    "jquery",
+    "browser"
+  ],
+  "loadEagerly": [
+    "src/lib/main.extensions.js",
+    "src/**/*.service.js",
+    "src/**/*.constant.js",
+    "src/**/*.constants.js",
+    "src/**/*.config.js",
+    "src/**/*.class.js",
+    "src/**/*.api.js",
+    "src/**/*.abstract.js"
+  ],
+  "dontLoad": [],
+  "plugins": {
+    "jasmine": {},
+    "jasminematchers": {},
+    "doc_comment": {
+      "fullDocs": true,
+      "strong": false
+    },
+    "node": {},
+    "angular": {},
+    "modules": {
+      "dontLoad": "lodash",
+      "load": "",
+      "modules": {}
+    },
+    "es_modules": {}
+  }
+}

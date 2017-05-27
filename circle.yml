@@ -1,0 +1,14 @@
+dependencies:
+  override:
+    - npm install
+test:
+  override:
+    - npm run spec:circle
+    - npm run lint:js
+    - npm run lint:sass
+    - npm run lint:pug
+  post:
+    - cp -R reports $CIRCLE_ARTIFACTS/test-coverage
+machine:
+  node:
+    version: 7.5.0
